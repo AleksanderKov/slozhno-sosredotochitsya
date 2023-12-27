@@ -4,7 +4,7 @@
   переключая тему
 */
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --font-family: "IBM Plex Mono", monospace;
     --background-image: url(../images/cover-image-dark.png);
     --background-page-color: #000028;

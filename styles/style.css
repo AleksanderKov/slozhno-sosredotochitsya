@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--background-page-color);
+  background-attachment: fixed;
 }
 
 .header {
