@@ -3,17 +3,23 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--background-page-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
 }
 
 .header {
   display: grid;
-  min-height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr min-content 1fr;
+  min-height: 668px;
+  height: 100vh;
   padding: 10px;
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+}
+
+.header__block-text {
+  place-self: center end;
 }
 
 .header__rec-decoration {
@@ -28,7 +34,8 @@
 }
 
 .header__rec-decoration::before {
-  content: "REC";
+  content: "rec";
+  text-transform: uppercase;
   color: var(--accent-color);
   font-family: var(--font-family);
   font-size: 18px;
@@ -68,8 +75,7 @@
 }
 
 .header__theme-menu {
-  justify-self: end;
-  margin: 65px 0px 10px 0px;
+  place-self: center end;
 }
 
 .header_title {
@@ -77,7 +83,7 @@
   text-shadow: 4px 4px 0 var(--slogan-title-shadow-color);
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--font-calculation-mobile);
   line-height: 96.7px;
 }
 
@@ -98,7 +104,7 @@
 .header__theme-menu-button {
   color: var(--header-nav);
   font-family: var(--font-family);
-  block-size: 26px;
+  min-height: 26px;
   padding: 0px 13px;
   background-color: transparent;
   font-size: 18px;
@@ -120,6 +126,7 @@
 }
 
 .header__theme-menu-button:focus {
+  outline: none;
   border: none;
   border-bottom: 1px solid var(--accent-color);
 }
@@ -127,7 +134,7 @@
   margin-block-start: 30px;
   display: grid;
   grid-row-gap: 30px;
-  margin-block-end: 21px;
+  margin-block-end: 31px;
 }
 
 .section {
@@ -163,6 +170,7 @@
 }
 
 .list-text-link:focus {
+  outline: none;
   border: 1px solid var(--list__text-color);
 }
 
@@ -182,18 +190,13 @@
   gap: 20px;
 }
 
-.why-difficult__list {
+.question__list {
   display: grid;
   gap: 20px;
 }
 
 .what__section-title {
   margin-block-end: 20px;
-}
-
-.what-reduces__list {
-  display: grid;
-  gap: 20px;
 }
 
 .how-concentrate {
@@ -203,11 +206,6 @@
 
 .section__title-concentrate-adviсe {
   margin-block-end: 20px;
-}
-
-.how-concentrate__list {
-  display: grid;
-  gap: 20px;
 }
 
 .gallery {
@@ -227,7 +225,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
-  margin-block-end: 10px;
 }
 
 .gallery__collection-image {
@@ -240,6 +237,7 @@
 
 .footer {
   height: 100vh;
+  min-height: 668px;
   position: relative;
   display: grid;
   justify-content: center;
@@ -251,7 +249,7 @@
   text-shadow: 2px 2px 0 var(--slogan-title-shadow-color);
   font-family: var(--font-family);
   font-style: normal;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--font-calculation-mobile);
   font-weight: 700;
   line-height: 95.7px;
 }
@@ -276,18 +274,13 @@
     bottom: 20px;
   }
 
-  .header__theme-menu {
-    margin-block-start: 180px;
-  }
-
   .header_title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--font-calculation-computer-tablet);
   }
 
   .header__block-text {
     max-inline-size: 364px;
-    justify-self: end;
-    padding-block-end: 9px;
+    padding-block-end: 10px;
   }
 
   .main {
@@ -310,6 +303,10 @@
 
   .how-concentrate {
     grid-template-columns: 1fr 2fr;
+  }
+
+  .gallery-title {
+    margin-block-end: 10px;
   }
 
   .gallery__collection {
@@ -340,23 +337,21 @@
   }
 
   .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--font-calculation-computer-tablet);
   }
 }
 
 @media (width >= 1024px) {
+
   .header__theme-menu {
-    justify-self: center;
-    margin: 8px 0px 0px 20px;
+    place-self: start center;
+    margin-inline-start: 20px;
+    padding-block-start: 10px;
   }
 
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
-  }
-
-  .header_title {
-    margin-block-start: 166px;
   }
 
   .header__block-text {
