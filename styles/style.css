@@ -114,6 +114,7 @@
   line-height: 18px;
   border: none;
   text-transform: lowercase;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -150,6 +151,12 @@
   line-height: 23.4px;
 }
 
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .list-text {
   font-family: var(--font-family);
   color: var(--list__text-color);
@@ -182,7 +189,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
-  margin-block-end: 10px;
 }
 
 .why-difficult {
@@ -204,8 +210,19 @@
   gap: 20px;
 }
 
+.how-concentrate .list-item-title {
+  font-weight: 400;
+}
+
 .section__title-concentrate-adviсe {
   margin-block-end: 20px;
+  font-family: var(--font-family);
+  color: var(--list-item-title-color);
+  background-color: var(--list-item-background-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
 }
 
 .gallery {
@@ -359,11 +376,19 @@
     padding-block-end: 0px;
   }
 
+  .why-difficult {
+    gap: 10px;
+  }
+
   .what__section-title {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   .what-reduces__list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .how-concentrate {
+    gap: 10px;
   }
 }
